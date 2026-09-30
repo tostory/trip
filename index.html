@@ -138,6 +138,10 @@ section > .grp{margin-top:6px}
 .contacts li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
 .contacts li:last-child{border-bottom:0}
 .cn{min-width:0;font-weight:500}
+.contacts li.agency{padding-bottom:2px;border-bottom:0}
+.contacts li.agency .cn{color:var(--jade)}
+.contacts li.policy{display:block;padding:4px 0 10px}
+.contacts .note li{display:list-item;border:0;padding:2px 0}
 .cn small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
 .tel{flex:0 0 auto;font:inherit;font-family:var(--f-mono);font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--jade);background:var(--jade-soft);border:0;border-radius:8px;padding:6px 10px;cursor:pointer;user-select:all}
 .tel:focus-visible,.phr:focus-visible,.big-close:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
@@ -477,7 +481,7 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
         <details class="gd"><summary>가이드 노트</summary><div class="gbody">
           <p>투어 차량이 구시가지 호텔들을 돌면서 손님을 태우기 때문에 7시에서 7시 45분 사이에 도착해요. <b>6시 50분까지 로비</b>에 내려와 계세요. 조식은 6시 반쯤 빨리 드시거나, 호텔에 부탁해서 도시락으로 받아도 됩니다.</p>
           <p>챙길 것: <b>여권(또는 여권 사본)</b>, 선크림, 모자, 선글라스, 얇은 겉옷, 멀미약, 현금(음료, 팁, 카약 비용). 크루즈 탑승할 때 승객 명단 확인을 위해 여권을 보자고 할 수 있어요.</p>
-          <p class="warn">전날 밤 투어사 카카오톡이나 문자로 픽업 시간이 다시 오는 경우가 많아요. 꼭 확인하세요.</p>
+          <p class="warn">여행사가 투어 전날(11/6) 21시까지 차량과 픽업 시간을 안내해줘요. 꼭 확인하시고, 안내가 안 오면 비상 카카오톡(hanoicheetah)으로 연락하세요.</p>
         </div></details>
       </span></li>
       <li class="move"><time>07:45</time><span class="what">하롱베이로 이동 (~09:30) · 고속도로로 약 2.5시간</span></li>
@@ -630,8 +634,17 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
     <h3 class="grp">우리 예약</h3>
     <ul class="contacts">
       <li><span class="cn">Rex Hanoi Hotel<small>42~44 Gia Ngư</small></span><button type="button" class="tel" data-n="024 3556 5588">024 3556 5588</button></li>
-      <li><span class="cn">공항 픽업·샌딩 업체<small>단독 차량</small></span><span class="blank">확인 필요</span></li>
-      <li><span class="cn">하롱베이 투어사<small>돌핀 크루즈 · 11/7</small></span><span class="blank">확인 필요</span></li>
+      <li class="agency"><span class="cn">여행사 · 공항 픽업·샌딩 + 하롱베이 투어<small>같은 여행사 · 비상시 카카오톡으로 꼭 연락</small></span></li>
+      <li><span class="cn">비상 카카오톡 ID<small>상담 불가 시간에도 여기로</small></span><button type="button" class="tel" data-n="hanoicheetah">hanoicheetah</button></li>
+      <li><span class="cn">비상 현지 전화<small>베트남 번호</small></span><button type="button" class="tel" data-n="038-6354-330">038-6354-330</button></li>
+      <li class="policy"><div class="note">
+        <b>여행사 이용 안내</b>
+        <ul>
+          <li><b>투어 안내</b>: 투어 하루 전 21시까지 차량, 픽업 시간 안내가 와요. 하롱베이는 <b>11/6(금) 밤</b>에 꼭 확인하세요.</li>
+          <li><b>상담 시간 (한국시간)</b>: 월~금 10:00~20:00, 토 10:00~16:00, 점심 13:00~14:00, <b>일요일 휴무</b>. 귀국일 11/8이 일요일이라 샌딩 관련 급한 일은 비상 카카오톡으로 연락하세요.</li>
+          <li><b>취소·날짜 변경</b>: 영업일(월~금, 공휴일 제외) 기준 3일 전 18시(한국시간)까지 가능. 투어별 취소 규정에 따라 취소료가 생길 수 있어요.</li>
+        </ul>
+      </div></li>
       <li><span class="cn">출국 패스트트랙 업체<small>예약자 지**</small></span><span class="blank">확인 필요</span></li>
       <li><span class="cn">KB손해보험 해외 긴급지원<small>증권 PDF 참고</small></span><span class="blank">확인 필요</span></li>
       <li><span class="cn">아시아나항공<small>귀국편 11/8 13:30</small></span><span class="blank">확인 필요</span></li>
