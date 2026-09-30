@@ -24,6 +24,7 @@
   --jade:#5fc2a4; --jade-soft:#1b3a32; --lantern:#f2bd4b; --lantern-soft:#3a2f16; --red:#ec6f63; color-scheme:dark}
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.6;margin:0}
 .wrap{max-width:640px;margin:0 auto;padding:0 16px 48px}
 a{color:var(--jade)}
@@ -131,6 +132,32 @@ details[open] .arrow{transform:rotate(180deg)}
 .gbody .warn::before{content:"주의 · ";font-weight:700}
 .gtoggle{justify-self:start;font:inherit;font-size:.82rem;font-weight:500;color:var(--jade);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
 .gtoggle:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
+.grp{font-size:.78rem;letter-spacing:.08em;color:var(--jade);font-weight:700;margin:0 0 4px}
+section > .grp{margin-top:6px}
+.contacts{list-style:none;margin:0;padding:0}
+.contacts li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.contacts li:last-child{border-bottom:0}
+.cn{min-width:0;font-weight:500}
+.cn small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
+.tel{flex:0 0 auto;font:inherit;font-family:var(--f-mono);font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--jade);background:var(--jade-soft);border:0;border-radius:8px;padding:6px 10px;cursor:pointer;user-select:all}
+.tel:focus-visible,.phr:focus-visible,.big-close:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
+.blank{flex:0 0 auto;font-size:.8rem;color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:5px 10px;min-width:8.5em;text-align:center}
+.lost summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.lost summary::-webkit-details-marker{display:none}
+.lost[open] .arrow{transform:rotate(180deg)}
+.steps{margin:10px 0 6px;padding-left:20px;display:grid;gap:6px;font-size:.88rem}
+.copied{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.85rem;z-index:20}
+.phrases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.phr{font:inherit;text-align:left;cursor:pointer;display:grid;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:var(--fg);min-width:0}
+.phr.wide{width:100%}
+.phr .ko{font-size:.78rem;color:var(--muted)}
+.phr .vi{font-weight:700;font-size:1rem;overflow-wrap:anywhere}
+.phr .say{font-size:.76rem;color:var(--jade)}
+.big{position:fixed;inset:0;z-index:30;background:var(--surface);display:grid;place-items:center;padding:calc(24px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px))}
+.big-in{display:grid;gap:18px;text-align:center;max-width:720px;width:100%}
+.big-vi{margin:0;font-size:clamp(2rem,9vw,4rem);font-weight:700;line-height:1.25;white-space:pre-line;overflow-wrap:anywhere;color:var(--fg)}
+.big-ko{margin:0;font-size:1.05rem;color:var(--muted)}
+.big-close{justify-self:center;font:inherit;font-weight:700;color:var(--surface);background:var(--jade);border:0;border-radius:999px;padding:10px 28px;cursor:pointer}
 .maplinks{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}
 .maplinks a{font-size:.8rem;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--jade);background:var(--surface)}
 .total{display:flex;justify-content:space-between;gap:8px;padding:10px 14px;background:var(--lantern-soft);font-size:.88rem}
@@ -175,6 +202,8 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
 
 <nav aria-label="바로가기"><div class="scroll">
   <a href="#plan">일정</a>
+  <a href="#sos">비상연락</a>
+  <a href="#phrase">베트남어</a>
   <a href="#booked">예약</a>
   <a href="#budget">예산</a>
   <a href="#wish">가고싶은 곳</a>
@@ -574,6 +603,113 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
   </div>
 </section>
 
+<!-- 비상 연락처 -->
+<section id="sos">
+  <h2>비상 연락처 <small>번호를 누르면 복사</small></h2>
+
+  <div class="card">
+    <h3 class="grp">긴급 · 현지</h3>
+    <ul class="contacts">
+      <li><span class="cn">경찰<small>베트남</small></span><button type="button" class="tel" data-n="113">113</button></li>
+      <li><span class="cn">구급차<small>베트남</small></span><button type="button" class="tel" data-n="115">115</button></li>
+      <li><span class="cn">화재<small>베트남</small></span><button type="button" class="tel" data-n="114">114</button></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="grp">대한민국 대사관 · 영사</h3>
+    <ul class="contacts">
+      <li><span class="cn">영사안전콜센터<small>사건사고 24시간 · 한국 번호</small></span><button type="button" class="tel" data-n="+82-2-3210-0404">+82-2-3210-0404</button></li>
+      <li><span class="cn">대사관 긴급<small>근무시간 외 24시간</small></span><button type="button" class="tel" data-n="+84-90-402-6126">+84-90-402-6126</button></li>
+      <li><span class="cn">대사관 영사과<small>근무시간 · 여권, 비자</small></span><button type="button" class="tel" data-n="+84-24-3771-0404">+84-24-3771-0404</button></li>
+    </ul>
+    <p class="cap">주소: SQ4 Diplomatic Complex, Đỗ Nhuận, Xuân Đỉnh, Hà Nội (호텔에서 차로 약 30~40분)</p>
+  </div>
+
+  <div class="card">
+    <h3 class="grp">우리 예약</h3>
+    <ul class="contacts">
+      <li><span class="cn">Rex Hanoi Hotel<small>42~44 Gia Ngư</small></span><button type="button" class="tel" data-n="024 3556 5588">024 3556 5588</button></li>
+      <li><span class="cn">공항 픽업·샌딩 업체<small>단독 차량</small></span><span class="blank">확인 필요</span></li>
+      <li><span class="cn">하롱베이 투어사<small>돌핀 크루즈 · 11/7</small></span><span class="blank">확인 필요</span></li>
+      <li><span class="cn">출국 패스트트랙 업체<small>예약자 지**</small></span><span class="blank">확인 필요</span></li>
+      <li><span class="cn">KB손해보험 해외 긴급지원<small>증권 PDF 참고</small></span><span class="blank">확인 필요</span></li>
+      <li><span class="cn">아시아나항공<small>귀국편 11/8 13:30</small></span><span class="blank">확인 필요</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="grp">가게</h3>
+    <ul class="contacts">
+      <li><span class="cn">라비엔 스파<small>1일차 · 17 Hàng Cân</small></span><button type="button" class="tel" data-n="+84 386 354 330">+84 386 354 330</button></li>
+      <li><span class="cn">쓰리따봉 스파<small>2일차 · 더가든 쇼핑몰</small></span><button type="button" class="tel" data-n="+84 38 430 8587">+84 38 430 8587</button></li>
+      <li><span class="cn">Duck 34<small>2일차 · 34B Mỹ Đình</small></span><button type="button" class="tel" data-n="0938 888 834">0938 888 834</button></li>
+    </ul>
+  </div>
+
+  <details class="card lost">
+    <summary><b>여권을 잃어버렸을 때</b><span class="arrow">▾</span></summary>
+    <ol class="steps">
+      <li><b>가까운 경찰서(공안)</b>에서 분실 확인서를 받으세요. 호텔 프런트에 가까운 공안 위치와 통역을 부탁하면 도와줍니다.</li>
+      <li><b>대사관 영사과</b>에 연락해 <b>여행증명서</b>(귀국용 임시 여권)를 신청하세요. 여권 사진 2장, 분실 확인서, 신분증 사본이 필요해요.</li>
+      <li>베트남 출입국관리국에서 <b>출국 허가</b>를 받아야 비행기를 탈 수 있어요. 며칠 걸릴 수 있으니 항공사에도 바로 알리세요.</li>
+    </ol>
+    <p class="cap">미리 해둘 것: 여권 사진면을 휴대폰에 찍어두고, 여권 사진 2장을 챙기세요.</p>
+  </details>
+  <div class="copied" id="copied" role="status" aria-live="polite" hidden>복사했어요</div>
+</section>
+
+<!-- 베트남어 카드 -->
+<section id="phrase">
+  <h2>베트남어 카드 <small>누르면 크게 보기</small></h2>
+  <p class="cap">카드를 누르면 화면 가득 크게 떠요. 직원에게 그대로 보여주세요.</p>
+
+  <h3 class="grp">호텔로 갈 때</h3>
+  <button type="button" class="phr wide" data-vi="Cho tôi đến Rex Hanoi Hotel&#10;42-44 Gia Ngư, Hàng Bạc,&#10;Hoàn Kiếm, Hà Nội" data-ko="렉스 하노이 호텔로 가주세요"><span class="ko">이 주소로 가주세요 (호텔)</span><span class="vi">Rex Hanoi Hotel · 42-44 Gia Ngư, Hàng Bạc, Hoàn Kiếm</span></button>
+
+  <h3 class="grp">식당</h3>
+  <div class="phrases">
+    <button type="button" class="phr" data-vi="Không cho rau mùi" data-ko="고수 빼주세요"><span class="ko">고수 빼주세요</span><span class="vi">Không cho rau mùi</span><span class="say">콩 쪼 자우 무이</span></button>
+    <button type="button" class="phr" data-vi="Không cay" data-ko="맵지 않게 해주세요"><span class="ko">맵지 않게</span><span class="vi">Không cay</span><span class="say">콩 까이</span></button>
+    <button type="button" class="phr" data-vi="Không đá" data-ko="얼음 빼주세요"><span class="ko">얼음 빼주세요</span><span class="vi">Không đá</span><span class="say">콩 다</span></button>
+    <button type="button" class="phr" data-vi="Cho 5 chai bia" data-ko="맥주 5병 주세요"><span class="ko">맥주 5병 주세요</span><span class="vi">Cho 5 chai bia</span><span class="say">쪼 남 짜이 비아</span></button>
+    <button type="button" class="phr" data-vi="Bàn cho 5 người" data-ko="5명 자리 있어요?"><span class="ko">5명 자리요</span><span class="vi">Bàn cho 5 người</span><span class="say">반 쪼 남 응어이</span></button>
+    <button type="button" class="phr" data-vi="Tính tiền" data-ko="계산해주세요"><span class="ko">계산해주세요</span><span class="vi">Tính tiền</span><span class="say">띤 띠엔</span></button>
+    <button type="button" class="phr" data-vi="Ngon quá!" data-ko="정말 맛있어요!"><span class="ko">정말 맛있어요</span><span class="vi">Ngon quá!</span><span class="say">응언 꽈</span></button>
+    <button type="button" class="phr" data-vi="Một, hai, ba, dô!" data-ko="하나, 둘, 셋, 건배!"><span class="ko">건배!</span><span class="vi">Một, hai, ba, dô!</span><span class="say">못 하이 바 요</span></button>
+  </div>
+
+  <h3 class="grp">쇼핑 · 시장</h3>
+  <div class="phrases">
+    <button type="button" class="phr" data-vi="Bao nhiêu tiền?" data-ko="얼마예요?"><span class="ko">얼마예요?</span><span class="vi">Bao nhiêu tiền?</span><span class="say">바오 니에우 띠엔</span></button>
+    <button type="button" class="phr" data-vi="Đắt quá! Bớt đi" data-ko="너무 비싸요, 깎아주세요"><span class="ko">깎아주세요</span><span class="vi">Đắt quá! Bớt đi</span><span class="say">닷 꽈, 벗 디</span></button>
+    <button type="button" class="phr" data-vi="Không, cảm ơn" data-ko="괜찮아요, 안 살게요"><span class="ko">괜찮아요(거절)</span><span class="vi">Không, cảm ơn</span><span class="say">콩, 깜 언</span></button>
+  </div>
+
+  <h3 class="grp">마사지</h3>
+  <div class="phrases">
+    <button type="button" class="phr" data-vi="Mạnh hơn" data-ko="더 세게 해주세요"><span class="ko">더 세게</span><span class="vi">Mạnh hơn</span><span class="say">마잉 헌</span></button>
+    <button type="button" class="phr" data-vi="Nhẹ hơn" data-ko="더 약하게 해주세요"><span class="ko">더 약하게</span><span class="vi">Nhẹ hơn</span><span class="say">녜 헌</span></button>
+    <button type="button" class="phr" data-vi="Đau" data-ko="아파요"><span class="ko">아파요</span><span class="vi">Đau</span><span class="say">다우</span></button>
+  </div>
+
+  <h3 class="grp">기본</h3>
+  <div class="phrases">
+    <button type="button" class="phr" data-vi="Xin chào" data-ko="안녕하세요"><span class="ko">안녕하세요</span><span class="vi">Xin chào</span><span class="say">신 짜오</span></button>
+    <button type="button" class="phr" data-vi="Cảm ơn" data-ko="감사합니다"><span class="ko">감사합니다</span><span class="vi">Cảm ơn</span><span class="say">깜 언</span></button>
+    <button type="button" class="phr" data-vi="Nhà vệ sinh ở đâu?" data-ko="화장실 어디예요?"><span class="ko">화장실 어디예요?</span><span class="vi">Nhà vệ sinh ở đâu?</span><span class="say">냐 베 신 어 더우</span></button>
+    <button type="button" class="phr" data-vi="Tôi bị mất hộ chiếu" data-ko="여권을 잃어버렸어요"><span class="ko">여권을 잃어버렸어요</span><span class="vi">Tôi bị mất hộ chiếu</span><span class="say">또이 비 멋 호 찌에우</span></button>
+  </div>
+</section>
+
+<div class="big" id="big" hidden>
+  <div class="big-in">
+    <p class="big-vi" id="bigVi"></p>
+    <p class="big-ko" id="bigKo"></p>
+    <button type="button" class="big-close" id="bigClose">닫기</button>
+  </div>
+</div>
+
 <!-- 예약 -->
 <section id="booked">
   <h2>예약 현황 <small>6건 완료</small></h2>
@@ -708,6 +844,27 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
     gds.forEach(function(g){g.open=open;});
     gt.textContent=open?'가이드 노트 모두 접기':'가이드 노트 모두 펼치기';
   });
+  var toast=document.getElementById('copied'), tt;
+  function showToast(msg){ toast.textContent=msg; toast.hidden=false; clearTimeout(tt); tt=setTimeout(function(){toast.hidden=true;},1600); }
+  document.querySelectorAll('.tel').forEach(function(b){
+    b.addEventListener('click',function(){
+      var n=b.getAttribute('data-n');
+      var done=function(){showToast(n+' 복사했어요');};
+      var fallback=function(){ var r=document.createRange(); r.selectNodeContents(b); var s=getSelection(); s.removeAllRanges(); s.addRange(r); showToast('번호를 길게 눌러 복사하세요'); };
+      try{ navigator.clipboard.writeText(n).then(done,fallback); }catch(e){ fallback(); }
+    });
+  });
+  var big=document.getElementById('big'), bigVi=document.getElementById('bigVi'), bigKo=document.getElementById('bigKo'), lastPhr=null;
+  document.querySelectorAll('.phr').forEach(function(b){
+    b.addEventListener('click',function(){
+      lastPhr=b; bigVi.textContent=b.getAttribute('data-vi'); bigKo.textContent=b.getAttribute('data-ko');
+      big.hidden=false; document.getElementById('bigClose').focus();
+    });
+  });
+  function closeBig(){ big.hidden=true; if(lastPhr) lastPhr.focus(); }
+  document.getElementById('bigClose').addEventListener('click',closeBig);
+  big.addEventListener('click',function(e){ if(e.target===big) closeBig(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !big.hidden) closeBig(); });
   document.querySelectorAll('.check input').forEach(function(cb){
     try{ cb.checked=localStorage.getItem('hanoi-'+cb.id)==='1'; }catch(e){}
     cb.addEventListener('change',function(){ try{ localStorage.setItem('hanoi-'+cb.id,cb.checked?'1':'0'); }catch(e){} });
