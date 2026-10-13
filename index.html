@@ -162,6 +162,15 @@ section > .grp{margin-top:6px}
 .big-vi{margin:0;font-size:clamp(2rem,9vw,4rem);font-weight:700;line-height:1.25;white-space:pre-line;overflow-wrap:anywhere;color:var(--fg)}
 .big-ko{margin:0;font-size:1.05rem;color:var(--muted)}
 .big-close{justify-self:center;font:inherit;font-weight:700;color:var(--surface);background:var(--jade);border:0;border-radius:999px;padding:10px 28px;cursor:pointer}
+.tip summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px}
+.tip summary::-webkit-details-marker{display:none}
+.tip summary b{flex:1;min-width:0}
+.tip[open] .arrow{transform:rotate(180deg)}
+.tip summary:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
+.tlabel{flex:0 0 auto;font-size:.72rem;font-weight:700;color:var(--jade);background:var(--jade-soft);border-radius:6px;padding:1px 7px}
+.tlabel.law{color:var(--surface);background:var(--red)}
+.tlist{margin:10px 0 2px;padding-left:18px;display:grid;gap:7px;font-size:.88rem;line-height:1.65}
+.tlist b{font-weight:700}
 .maplinks{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}
 .maplinks a{font-size:.8rem;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--jade);background:var(--surface)}
 .total{display:flex;justify-content:space-between;gap:8px;padding:10px 14px;background:var(--lantern-soft);font-size:.88rem}
@@ -208,6 +217,7 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
   <a href="#plan">일정</a>
   <a href="#sos">비상연락</a>
   <a href="#phrase">베트남어</a>
+  <a href="#tips">상식</a>
   <a href="#booked">예약</a>
   <a href="#budget">예산</a>
   <a href="#wish">가고싶은 곳</a>
@@ -726,6 +736,68 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
     <button type="button" class="big-close" id="bigClose">닫기</button>
   </div>
 </div>
+
+<!-- 베트남 상식 -->
+<section id="tips">
+  <h2>베트남 상식 <small>하지 말아야 할 것</small></h2>
+
+  <details class="card tip" open>
+    <summary><span class="tlabel law">법</span><b>법적으로 문제가 되는 것</b><span class="arrow">▾</span></summary>
+    <ul class="tlist">
+      <li><b>마약은 절대 금지.</b> 처벌이 아시아에서도 가장 무거운 편이라 사형까지 가능해요. 낯선 사람이 주는 담배, 음료, 약은 받지 마세요.</li>
+      <li><b>전자담배·가열담배 금지.</b> 2025년부터 금지됐어요. 아이코스나 액상 전자담배는 아예 가져가지 마세요. 출발 전 최신 규정 확인.</li>
+      <li><b>성매매는 불법.</b> 단속이 잦고 바가지, 협박, 절도 사고도 많아요. 호객은 무시하고 마사지는 일정에 있는 건전한 스파만 이용하세요. 이발소·가라오케 간판의 퇴폐 업소도 있어요.</li>
+      <li><b>군사시설, 경찰·공안 건물 촬영 금지.</b></li>
+      <li><b>드론은 허가 없이 금지.</b> 압수와 벌금 대상이에요.</li>
+      <li><b>정치 이야기 금지.</b> 호찌민 주석이나 정부를 비하하면 큰 문제가 돼요. 호찌민 얼굴이 있는 지폐를 구기거나 밟는 것도 실례예요.</li>
+    </ul>
+  </details>
+
+  <details class="card tip">
+    <summary><span class="tlabel">예절</span><b>문화·예절</b><span class="arrow">▾</span></summary>
+    <ul class="tlist">
+      <li><b>사원·사당</b>: 민소매, 짧은 반바지는 피하고 모자 벗고 조용히. 신발을 벗으라고 하면 벗으세요.</li>
+      <li><b>머리 만지지 않기.</b> 아이 머리 쓰다듬는 것도 실례예요.</li>
+      <li><b>손가락 까딱해서 부르지 않기.</b> 손바닥을 아래로 해서 부르세요.</li>
+      <li><b>밥그릇에 젓가락 꽂아두지 않기.</b> 제사를 떠올리게 해요.</li>
+      <li><b>사람 사진은 먼저 물어보기.</b> 노점 상인, 어르신은 특히.</li>
+      <li><b>화내거나 큰 소리로 따지지 않기.</b> 체면을 중요하게 여겨서 웃으면서 정중하게 말하는 게 훨씬 잘 통해요.</li>
+    </ul>
+  </details>
+
+  <details class="card tip">
+    <summary><span class="tlabel">돈</span><b>돈 관련</b><span class="arrow">▾</span></summary>
+    <ul class="tlist">
+      <li><b>지폐 헷갈리기 쉬움.</b> 2만₫과 50만₫은 둘 다 파란색 계열, 1만₫과 10만₫은 0 하나 차이. 계산할 때 한 장씩 확인하세요.</li>
+      <li><b>찢어지거나 낡은 지폐는 안 받는 곳이 많아요.</b> 환전할 때 깨끗한 지폐로 달라고 하세요.</li>
+      <li><b>달러 결제는 원칙적으로 불법.</b> 현지에서는 동으로 쓰세요.</li>
+      <li><b>팁은 의무 아님.</b> 마사지, 투어 가이드, 호텔 짐 운반 정도만.</li>
+      <li><b>흥정</b>: 시장과 노점은 기본. 마트, 식당, 카페는 정찰제.</li>
+    </ul>
+  </details>
+
+  <details class="card tip">
+    <summary><span class="tlabel">안전</span><b>안전</b><span class="arrow">▾</span></summary>
+    <ul class="tlist">
+      <li><b>오토바이 날치기 조심.</b> 길가에서 휴대폰 들고 있으면 낚아채 가요. 휴대폰과 가방은 차도 반대쪽 손에.</li>
+      <li><b>길 건너기</b>: 뛰지 말고 일정한 속도로 천천히. 갑자기 멈추거나 뒤로 물러나는 게 제일 위험해요.</li>
+      <li><b>수돗물은 마시지 않기.</b> 생수 사서 드세요. 양치는 괜찮아요.</li>
+      <li><b>택시는 Grab으로.</b> 길에서 잡는 택시는 미터기 조작 바가지가 있어요.</li>
+      <li><b>여권은 호텔 금고에</b>, 사본이나 사진을 가지고 다니세요.</li>
+      <li><b>술</b>: 거리에서 마시는 건 괜찮지만, 취해서 소란 피우면 공안이 개입할 수 있어요.</li>
+    </ul>
+  </details>
+
+  <details class="card tip">
+    <summary><span class="tlabel">귀국</span><b>귀국할 때 (한국 세관)</b><span class="arrow">▾</span></summary>
+    <ul class="tlist">
+      <li><b>육류 가공품 반입 금지.</b> 육포, 소시지, 햄, 고기 들어간 컵라면 등. 아프리카돼지열병 때문에 과태료가 커요.</li>
+      <li><b>생과일 반입 금지.</b> 말린 망고처럼 가공된 건 괜찮아요.</li>
+      <li><b>면세 한도</b>: 1인 800달러, 술 2병(합계 2L, 400달러 이하), 담배 1보루.</li>
+      <li><b>짝퉁 명품은 세관에서 압수.</b></li>
+    </ul>
+  </details>
+</section>
 
 <!-- 예약 -->
 <section id="booked">
