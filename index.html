@@ -100,6 +100,8 @@ details[open] .arrow{transform:rotate(180deg)}
 .rlabel{font-size:.75rem;letter-spacing:.08em;color:var(--jade);font-weight:700}
 .rbtn{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:.86rem;min-width:0}
 .rbtn b{color:var(--jade);white-space:nowrap;font-size:.8rem}
+.rl{display:grid;gap:2px;min-width:0}
+.rt{color:var(--muted);font-size:.76rem;line-height:1.45}
 .rbtn::after{content:"↗";margin-left:auto;color:var(--jade);font-weight:700;padding-left:6px}
 .rbtn:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
 .jog{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 14px;align-items:center}
@@ -320,9 +322,9 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
     </ol>
     <div class="route">
       <span class="rlabel">구글맵 동선</span>
-      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Ngoc Son Temple|Seafood 68 Dao Duy Tu"><b>① 도보</b> 호텔 → 응옥선 → 구시가지 → SEAFOOD 68</a>
+      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Ngoc Son Temple|Seafood 68 Dao Duy Tu"><b>① 도보</b><span class="rl">호텔 → 응옥선 → 구시가지 → SEAFOOD 68<small class="rt">걷는 시간 총 약 20분 · 호텔→응옥선 5분 · 응옥선→SEAFOOD 68 15분 (구경 시간 제외)</small></span></a>
       <a class="rbtn" data-mode="driving" data-stops="Seafood 68 Dao Duy Tu|MER cafe 48 Phung Hung"><b>② Grab</b> SEAFOOD 68 → 기찻길 카페</a>
-      <a class="rbtn" data-mode="walking" data-stops="MER cafe 48 Phung Hung|La Vie En Spa 17 Hang Can|Ta Hien Beer Street|Rex Hanoi Hotel 42 Gia Ngu"><b>③ 도보</b> 기찻길 카페 → 라비엔 스파 → 따히엔 → 호텔</a>
+      <a class="rbtn" data-mode="walking" data-stops="MER cafe 48 Phung Hung|La Vie En Spa 17 Hang Can|Ta Hien Beer Street|Rex Hanoi Hotel 42 Gia Ngu"><b>③ 도보</b><span class="rl">기찻길 카페 → 라비엔 스파 → 따히엔 → 호텔<small class="rt">걷는 시간 총 약 25분 · 기찻길 카페→스파 10~15분 · 스파→따히엔 5분 · 따히엔→호텔 5~10분</small></span></a>
     </div>
   </details>
 
@@ -353,7 +355,7 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
           <p class="warn">전시 내용이 꽤 무겁고 사진 설명이 적나라한 곳도 있어요. 안에서는 큰 소리로 떠들지 마세요. 오디오 가이드 빌릴 때 신분증 보관을 요구할 수 있으니 여권 사본을 챙기세요.</p>
         </div></details>
       </span></li>
-      <li class="move"><time>09:45</time><span class="what">구시가지로 이동</span></li>
+      <li class="move"><time>09:45</time><span class="what">카페 장(구시가지)으로 이동 · 도보 약 20분 (Grab 약 7분)</span></li>
       <li><time>10:00</time><span class="what"><b>카페 장 에그커피</b><span class="sub">~10:35 · 39 Nguyễn Hữu Huân</span>
         <details class="gd"><summary>가이드 노트</summary><div class="gbody">
           <p>에그커피가 처음 태어난 곳이에요. 1946년에 우유가 귀해서 창업자 응우옌반장 씨가 우유 대신 <b>달걀 노른자를 설탕과 거품 내서</b> 커피 위에 올린 게 시작입니다. 지금은 아드님이 운영하세요.</p>
@@ -370,7 +372,7 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
           <p class="warn">낮술 전이니 물 한 병 챙기세요. 11월 한낮도 25도 넘게 올라갑니다.</p>
         </div></details>
       </span></li>
-      <li class="move"><time>11:10</time><span class="what">짜까 탕롱으로 이동</span></li>
+      <li class="move"><time>11:10</time><span class="what">짜까 탕롱으로 이동 · 도보 약 10분</span></li>
       <li><time>11:20</time><span class="what"><b>짜까 탕롱 점심 + 낮술</b><span class="cost num">80만₫</span><span class="sub">~12:40 · 21·31 Đường Thành</span>
         <details class="gd"><summary>가이드 노트</summary><div class="gbody">
           <p><b>짜까(Chả Cá)</b>는 하노이에서만 제대로 먹을 수 있는 생선 요리예요. 강황과 양념에 재운 생선을 테이블 위 팬에 기름 두르고 구우면서, <b>딜과 쪽파</b>를 잔뜩 넣어 같이 볶아 먹습니다. 짜까 탕롱은 미쉐린 가이드 빕구르망에 올라간 집이에요.</p>
@@ -476,10 +478,10 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
         </ol>
         <p class="cap">시계방향 한 바퀴 약 1.7~1.8km · 조깅 약 12~15분. 40분 일정이라 2바퀴도 가능. 약도는 위치 참고용.</p>
       </div>
-      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Dong Kinh Nghia Thuc Square"><b>① 이동</b> 호텔 → 동킨응이아툭 광장</a>
-      <a class="rbtn" data-mode="walking" data-stops="Dong Kinh Nghia Thuc Square|Hoa Phong Tower|Trang Tien Plaza|King Le Thai To Statue|Dong Kinh Nghia Thuc Square"><b>② 조깅</b> 호안끼엠 호수 한 바퀴 (시계방향)</a>
-      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Hoa Lo Prison|Cafe Giang Hanoi|Cha Ca Thang Long"><b>③ 도보</b> 호텔 → 호아로 → 카페 장 → 짜까 탕롱</a>
-      <a class="rbtn" data-mode="walking" data-stops="Cha Ca Thang Long|Dong Xuan Market|Long Bien Bridge"><b>④ 도보</b> 짜까 탕롱 → 동쑤언 시장 → 롱비엔 철교</a>
+      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Dong Kinh Nghia Thuc Square"><b>① 이동</b><span class="rl">호텔 → 동킨응이아툭 광장<small class="rt">걷는 시간 약 5분</small></span></a>
+      <a class="rbtn" data-mode="walking" data-stops="Dong Kinh Nghia Thuc Square|Hoa Phong Tower|Trang Tien Plaza|King Le Thai To Statue|Dong Kinh Nghia Thuc Square"><b>② 조깅</b><span class="rl">호안끼엠 호수 한 바퀴 (시계방향)<small class="rt">한 바퀴 약 1.7km · 걸으면 약 25분, 조깅 12~15분</small></span></a>
+      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Hoa Lo Prison|Cafe Giang Hanoi|Cha Ca Thang Long"><b>③ 도보</b><span class="rl">호텔 → 호아로 → 카페 장 → 짜까 탕롱<small class="rt">걷는 시간 총 약 50분 · 호텔→호아로 15~20분 · 호아로→카페 장 20분 · 카페 장→짜까 탕롱 10~15분 (구시가지 산책 포함 시 더 걸림)</small></span></a>
+      <a class="rbtn" data-mode="walking" data-stops="Cha Ca Thang Long|Dong Xuan Market|Long Bien Station"><b>④ 도보</b><span class="rl">짜까 탕롱 → 동쑤언 시장 → 롱비엔역<small class="rt">걷는 시간 총 약 20분 · 짜까 탕롱→동쑤언 10~15분 · 동쑤언→롱비엔역 5~7분</small></span></a>
       <a class="rbtn" data-mode="driving" data-stops="Long Bien Station|Cong Caphe The Manor Me Tri|Three Tabom Spa The Garden Shopping Mall|Duck 34 34B My Dinh"><b>⑤ Grab</b> 롱비엔역 → 더 매너 카페 → 쓰리따봉 스파 → Duck 34</a>
       <a class="rbtn" data-mode="driving" data-stops="Duck 34 34B My Dinh|Lotte Center Hanoi|Rex Hanoi Hotel 42 Gia Ngu"><b>⑥ Grab</b> Duck 34 → 롯데센터 → 호텔</a>
     </div>
@@ -552,7 +554,7 @@ footer{margin-top:32px;font-size:.78rem;color:var(--muted)}
     <div class="route">
       <span class="rlabel">구글맵 동선</span>
       <a class="rbtn" data-mode="driving" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Ha Long Bay"><b>① 투어 차량</b> 하노이 → 하롱베이 (편도 약 2.5시간)</a>
-      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Dong Xuan Night Market|Rex Hanoi Hotel 42 Gia Ngu"><b>② 도보</b> 호텔 ↔ 동쑤언 야시장</a>
+      <a class="rbtn" data-mode="walking" data-stops="Rex Hanoi Hotel 42 Gia Ngu|Dong Xuan Night Market|Rex Hanoi Hotel 42 Gia Ngu"><b>② 도보</b><span class="rl">호텔 ↔ 동쑤언 야시장<small class="rt">걷는 시간 편도 약 10분 · 야시장은 항다오 거리부터 시작</small></span></a>
     </div>
   </details>
 
